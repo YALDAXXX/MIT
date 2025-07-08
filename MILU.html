@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para Milu 💖</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #ffdee9, #b5fffc);
+      text-align: center;
+      padding: 40px;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+      color: #d63384;
+      animation: heartbeat 1.5s infinite;
+    
+    }
+    h2 {
+      font-size: 1.5em;
+      margin-bottom: 1px;
+      color: #d63384;
+    
+    }
+
+
+    button {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      margin: 10px;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff85c1;
+      transform: scale(1.05);
+    }
+
+    .pantalla {
+      display: none;
+    }
+
+    .visible {
+      display: block;
+    }
+
+    #imagen img {
+      max-width: 30%;
+      margin-top: 10px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Pantalla principal -->
+  <div id="inicio" class="pantalla visible">
+    <h1>Hola Milu 💖</h1>
+  <h3>SUBE EL VOLUMEN DE TU CEL<h3>
+      </div>
+    <button onclick="irAPantalla('mensaje1')">Presiona si me extrañas</button>
+    <button onclick="irAPantalla('mensaje2')">Presiona si quieres una sorpresa</button>
+    <button onclick="irAPantalla('mensaje3')">Presiona si también me piensas</button>
+        <button onclick="irAPantalla('mensaje4')">Presiona.........................</button>
+  </div>
+
+  <!-- Pantalla 1: mensaje -->
+  <div id="mensaje1" class="pantalla">
+       <h2>Te extraño mucho, Milu 😢</h2>
+    <p style="font-size: 1.3em; color: #6a1b9a;">
+      No es solo una frase. Es lo que siento cada día desde que no hablamos. Me encantaría saber de ti...
+    </p>
+    <button onclick="volverInicio()">⬅ Regresar al inicio</button>
+  </div>
+
+  <!-- Pantalla 2: imagen sorpresa -->
+  <div id="mensaje2" class="pantalla">
+    <h2>Si tengo la pulsera y aun tu pasador jajaja</h2>
+<img src="https://i.imgur.com/4WttlmK.png" width="500" height="700" >
+
+
+    <button onclick="volverInicio()">⬅ Regresar al inicio</button>
+  </div>
+
+  <!-- Pantalla 3: otro mensaje -->
+  <div id="mensaje3" class="pantalla">
+   <img src="https://i.imgur.com/f0Y56Wt.jpeg"width="500" height="700" >
+    <button onclick="volverInicio()">⬅ Regresar al inicio</button>
+  </div>
+  <div id="mensaje4" class="pantalla">
+     <img src="https://i.imgur.com/EOjZf6z.jpeg"width="500" height="700" >
+    <button onclick="volverInicio()">⬅ Regresar al inicio</button>
+  </div>
+
+  <!-- Música de fondo -->
+  <audio autoplay loop>
+    <source src="https://www.dropbox.com/scl/fi/dpz0mewitddsnt0n9hru3/wwd.mp3juice.blog-Zo-Coraz-n-At-mico-192-KBps.mp3?rlkey=rd8miwcb3ezy29l9hioysnu0u&st=0ptdw8y5&raw=1" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <script>
+    function irAPantalla(id) {
+      // Oculta todas las pantallas
+      const pantallas = document.querySelectorAll('.pantalla');
+      pantallas.forEach(p => p.classList.remove('visible'));
+
+      // Muestra la pantalla seleccionada
+      document.getElementById(id).classList.add('visible');
+    }
+
+    function volverInicio() {
+      irAPantalla('inicio');
+    }
+  </script>
+
+</body>
+</html>
